@@ -1,0 +1,5 @@
+{
+  "jenkins": {
+    "url": "http://ci.collegeboardnewmedia.org/hudson/"
+  }
+}

@@ -1,11 +1,14 @@
 fs = require 'fs'
 
-load = (filename) ->
+load = (filename, callback) ->
   obj = {}
   options = { encoding: 'utf8' }
   
-  data = fs.readFileSync filename, options
-  obj = JSON.parse data
-  obj
+  fs.readFile filename, options, (err, data) ->
+    if err
+      console.warn err
+      return
+    obj = JSON.parse data
+    callback obj
 
 exports.load = load

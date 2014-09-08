@@ -2,9 +2,11 @@ loader = require './loader'
 
 console.log "Starting..."
 
+# Callback For Configuration Load Complete
+onConfigurationLoaded = (configObj) ->
+  console.log "Configuration: %j", configObj
+
+
 # Load Configuration
 configFile = __dirname + '/config.json'
-console.log "load configuration from file: #{ configFile }"
-configuration = loader.load configFile
-console.log JSON.stringify configuration
-
+configuration = loader.load configFile, onConfigurationLoaded

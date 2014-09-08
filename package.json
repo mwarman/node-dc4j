@@ -1,6 +1,7 @@
 {
   "name": "node-dc4j",
   "description": "node.js deployment client for jenkins",
+  "version": "0.1.0",
   "scripts": {},
   "dependencies": {},
   "devDependencies": {},

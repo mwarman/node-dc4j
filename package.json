@@ -3,7 +3,9 @@
   "description": "node.js deployment client for jenkins",
   "version": "0.1.0",
   "scripts": {},
-  "dependencies": {},
+  "dependencies": {
+    "request": "2.42.x"
+  },
   "devDependencies": {},
   "engines": {
     "node": ">=0.10"

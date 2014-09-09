@@ -1,5 +1,16 @@
 {
   "jenkins": {
-    "url": "http://ci.collegeboardnewmedia.org/hudson/"
+    "url": "http://ci.collegeboardnewmedia.org/hudson/",
+    "credentials": {
+      "auth": {
+        "user": "mwarman",
+        "pass": "e763595a189ef14f22a9b58f35d92585",
+        "sendImmediately": true
+      }
+    },
+    "jobs": [{
+      "name": "apcapstone",
+      "pollingInterval": 30000
+    }]
   }
 }

@@ -1,12 +1,13 @@
+logger = require './logger'
 loader = require './loader'
 scheduler = require './scheduler'
 request = require 'request'
 
-console.log "Starting..."
+logger.debug "Starting..."
 
 # Callback For Configuration Load Complete
 onConfigurationLoaded = (configObj) ->
-  console.log "Configuration: %j", configObj
+  logger.debug "Configuration: #{ JSON.stringify configObj }"
   scheduler.schedule configObj
 
 # Load Configuration

@@ -1,3 +1,4 @@
+logger = require './logger'
 fs = require 'fs'
 
 load = (filename, callback) ->
@@ -6,7 +7,7 @@ load = (filename, callback) ->
   
   fs.readFile filename, options, (err, data) ->
     if err
-      console.warn err
+      logger.warn err
       return
     obj = JSON.parse data
     callback obj

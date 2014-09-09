@@ -4,6 +4,7 @@
   "version": "0.1.0",
   "scripts": {},
   "dependencies": {
+    "log4js": "0.6.x",
     "request": "2.42.x"
   },
   "devDependencies": {},

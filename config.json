@@ -10,7 +10,7 @@
     },
     "jobs": [{
       "name": "apcapstone",
-      "pollingInterval": 1
+      "pollingInterval": 15000
     }]
   }
 }

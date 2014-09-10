@@ -1,7 +1,7 @@
 logger = require './logger'
 request = require 'request'
 
-class JenkinsJob
+class JenkinsEntity
   constructor: (@model) ->
   
   get: (path) ->
@@ -22,6 +22,12 @@ class JenkinsJob
   
   toString: () ->
     JSON.stringify @model
+
+
+class JenkinsBuild extends JenkinsEntity
+  
+
+class JenkinsJob extends JenkinsEntity
   
 
 class JenkinsClient
@@ -37,6 +43,17 @@ class JenkinsClient
       jobdata = JSON.parse body
       jenkinsJob = new JenkinsJob jobdata
       callback jenkinsJob
+
+  getBuild: (jobname, buildNumber, callback) ->
+    logger.debug "Get Jenkins Build #{ buildNumber }"
+    url = @baseUrl + 'job/' + jobname + '/' + buildNumber + '/api/json'
+    request.get url, @credentials, (err, resp, body) ->
+      if err || resp.statusCode isnt 200
+        logger.warn "Unable to communicate with Jenkins."
+        throw err
+      buildData = JSON.parse body
+      jenkinsBuild = new JenkinsBuild buildData
+      callback jenkinsBuild
 
 
 getInstance = (baseUrl, credentials) ->

@@ -19,7 +19,6 @@ class JenkinsJob
           value = undefined
           break
     value
-        
   
   toString: () ->
     JSON.stringify @model
@@ -38,6 +37,7 @@ class JenkinsClient
       jobdata = JSON.parse body
       jenkinsJob = new JenkinsJob jobdata
       callback jenkinsJob
+
 
 getInstance = (baseUrl, credentials) ->
   new JenkinsClient baseUrl, credentials

@@ -1,16 +1,20 @@
 logger = require './logger'
 loader = require './loader'
 scheduler = require './scheduler'
-request = require 'request'
+jenkinsClient = require './jenkinsClient'
 
 logger.debug "Starting..."
 
-# Callback For Configuration Load Complete
-onConfigurationLoaded = (configObj) ->
-  logger.debug "Configuration: #{ JSON.stringify configObj }"
-  scheduler.schedule configObj
-
 # Load Configuration
 configFile = __dirname + '/config.json'
-configuration = loader.load configFile, onConfigurationLoaded
+configuration = loader.load configFile, (config) ->
+  # Configuration Loaded
+  logger.debug "Configuration: #{ JSON.stringify config }"
+  # Get Jenkins Client
+  jenkinsClient = jenkinsClient.getInstance config.jenkins.url, config.jenkins.credentials
+  # Load a Jenkins Job
+  jenkinsClient.getJob 'apcapstone', (jenkinsJob) ->
+    # Jenkins Job Loaded
+    logger.debug "job: #{ jenkinsJob }"
+  #scheduler.schedule configObj
 

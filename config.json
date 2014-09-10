@@ -7,10 +7,13 @@
         "pass": "e763595a189ef14f22a9b58f35d92585",
         "sendImmediately": true
       }
-    },
-    "jobs": [{
-      "name": "apcapstone",
-      "pollingInterval": 15000
-    }]
-  }
+    }
+  },
+  "jobs": [{
+    "name": "apcapstone",
+    "pollingInterval": 15000
+  },{
+    "name": "bsLi",
+    "pollingInterval": 20000
+  }]
 }

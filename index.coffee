@@ -12,9 +12,6 @@ configuration = loader.load configFile, (config) ->
   logger.debug "Configuration: #{ JSON.stringify config }"
   # Get Jenkins Client
   jenkinsClient = jenkinsClient.getInstance config.jenkins.url, config.jenkins.credentials
-  # Load a Jenkins Job
-  jenkinsClient.getJob 'apcapstone', (jenkinsJob) ->
-    # Jenkins Job Loaded
-    logger.debug "job: #{ jenkinsJob }"
-  #scheduler.schedule configObj
+  # Schedule Jobs
+  scheduler.schedule jenkinsClient, config.jobs
 

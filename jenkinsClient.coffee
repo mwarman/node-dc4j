@@ -4,9 +4,22 @@ request = require 'request'
 class JenkinsJob
   constructor: (@model) ->
   
-  get: (attr) ->
-    if @model[attr]?
-      @model[attr]
+  get: (path) ->
+    value = undefined
+    nodes = path.split '.'
+    if nodes.length is 1 and @model[nodes[0]]?
+      value = @model[nodes[0]]
+    else
+      parent = @model
+      for child in nodes
+        if parent[child]?
+          value = parent[child]
+          parent = value
+        else
+          value = undefined
+          break
+    value
+        
   
   toString: () ->
     JSON.stringify @model

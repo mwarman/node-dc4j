@@ -6,7 +6,7 @@ run = (jenkinsClient, job) ->
   # Load a Jenkins Job
   jenkinsClient.getJob job.name, (jenkinsJob) ->
     # Jenkins Job Loaded
-    logger.debug "job.lastSuccessfulBuild: #{ JSON.stringify jenkinsJob.get 'lastSuccessfulBuild' }"
+    logger.debug "job.lastSuccessfulBuild.number: #{ JSON.stringify jenkinsJob.get 'lastSuccessfulBuild.number' }"
 
 schedule = (jenkinsClient, jobs) ->
   for job in jobs

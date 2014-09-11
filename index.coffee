@@ -7,7 +7,7 @@ logger.debug "Starting..."
 
 # Load Configuration
 configFile = __dirname + '/config.json'
-configuration = loader.load configFile, (config) ->
+loader.load configFile, (config) ->
   # Configuration Loaded
   logger.debug "Configuration: #{ JSON.stringify config }"
   # Get Jenkins Client

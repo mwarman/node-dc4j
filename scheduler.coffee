@@ -10,7 +10,7 @@ run = (jenkinsClient, job) ->
     # Load Last Successful Build
     jenkinsClient.getBuild job.name, jenkinsJob.get('lastSuccessfulBuild.number'), (jenkinsBuild) ->
       # Jenkins Build Loaded
-      logger.debug "build.fullDisplayName: #{ jenkinsBuild.get 'fullDisplayName' }"
+      logger.debug "build.artifacts: #{ JSON.stringify jenkinsBuild.get 'artifacts' }"
 
 schedule = (jenkinsClient, jobs) ->
   for job in jobs

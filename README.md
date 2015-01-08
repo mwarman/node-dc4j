@@ -1,5 +1,5 @@
 # node-dc4j
-node.js deployment client for jenkins ci
+node.js deployment client for Jenkins ci
 
 ## Project Status
 This project is in *pre-alpha* status.
@@ -19,7 +19,6 @@ At this time, there are no prepared releases of the node-dc4j project.  You may 
 5. Press `ctrl-C` to halt the application.
 
 ## Contributing
-At this time, the project is in *pre-alpha* status and, therefore, is undergoing significant refinement frequently.  During the pre-alpha phase, the project is closed to contributions. 
+At this time, the project is in *pre-alpha* status and, therefore, is undergoing significant refinement frequently.  During the pre-alpha phase, the project is closed to contributions.
 
 Once the project enters the *alpha* phase and beyond, the project will be open to public contribution.
-

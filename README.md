@@ -1,5 +1,5 @@
 # node-dc4j
-node.js deployment client for Jenkins ci
+node.js deployment client for jenkins ci
 
 ## Project Status
 This project is in *pre-alpha* status.
